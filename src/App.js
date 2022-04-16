@@ -24,6 +24,7 @@ const searchLocation = (event) => {
     }
   }
 
+
     return ( 
 
       <div className="app">
@@ -33,8 +34,9 @@ const searchLocation = (event) => {
           value={location}
           onChange = {event => setLocation(event.target.value)}
           onKeyPress={searchLocation}
-          placeholder="Search"
+          placeholder="Enter Location"
           type="text"  />
+          <p>Check the Current Weather in your Area</p>
         </div>
 
       <div className="container">
@@ -42,7 +44,7 @@ const searchLocation = (event) => {
         <div className="top">
             <div className="location">
                <h1>{data.name}</h1>
-              { data.sys ? <p className='country'> | {data.sys.country}</p> : null}
+              { data.sys ? <p className='country'>{data.sys.country}</p> : null}
             </div>
             <div className="temp">
                {data.main ? <p>{data.main.temp.toFixed()} °C</p>: null}
